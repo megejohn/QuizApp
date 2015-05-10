@@ -1,36 +1,79 @@
 <!DOCTYPE HTML>
 <HTML>
 	<head>
-	<meta charset="UTF-8">
+		<meta charset="UTF-8">
 		<title>Can you guess the Pop song?</title>
-<!-- JavaScript -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="HipHop.js"></script>
-<!-- Stylesheets -->
+
+		<!-- Stylesheets -->
+
+		<link href="HipHop.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="HipHop.css">
 		<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+		<!-- JavaScript -->
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="HipHop.js"></script>
+
 	</head>
+
 	<body id="body">
-<!-- Section with boombox and intro and button -->
-	<div id="centerArea">
-		<div id="getStarted">
-			<h1 id="intro">Pop Quiz: <br> Can you guess the Pop Song From the Lyric?</h1>
+
+		<!-- Section with boombox and intro and button -->
+
+		<div id="centerArea">
+			<div id="getStarted">
+				<div id="boomBox">
+					<img src="music-99165_1280.png">
+				</div>
+				<h1 id="intro">Pop Quiz: <br> Can you guess the Pop Song From the Lyric?</h1>
 				<input type="submit" value="Get Started" class="button" id="start" onkeydown="if(event.keyCode==13)$('#start').trigger('click');">
-	<div id="boomBox">
-	<img src="music-99165_1280.png">
-	</div>
+			</div>
 		</div>
-		<div id="topQuestion">
-			<h1 id="firstQuestion">"I'm so three thousand and eight,
-You so two thousand and late"</h1>
-			<h1 id="secondQuestion">"But all the hustlers they love it, Just to see one of us make it"</h1>
-			<h1 id="thirdQuestion">"You actin' kinda shady,
-Ain't callin' me baby"</h1>
-			<h1 id="fourthQuestion">"I can't even buy you flowers,
-But together we can be the perfect soul mates"</h1>
-			<h1 id="fifthQuestion">"And these two eyes that for no other,
-The day you leave will cry a river"</h1>
+		<div id="question1" class="question">
+			<h1>"But all the hustlers they love it, Just to see one of us make it"</h1>
+			<ul>
+				<li>All Falls Down by Kanye West</li>
+				<li>So Fresh, So Clean by Outkast</li>
+				<li>Dirt Off Your Shoulders by Jay-Z</li>
+			</ul>
+			<button id="q1button">Next</button>
 		</div>
+		<div id="question2"  class="question">
+			<h1>"I'm so three thousand and eight, You so two thousand and late"</h1>
+			<ul>
+				<li>Boom Boom Pow by the Black Eyed Peas</li>
+				<li>Super Bass by Nicki Minaj</li>
+				<li>Paper Planes by M.I.A.</li>
+			</ul>
+			<button id="q2button">Next</button>
+		</div>
+		<div id="question3" class="question">
+			<h1>"You actin' kinda shady, Ain't callin' me baby"</h1>
+			<ul>
+				<li>Irreplaceable by Beyonce</li>
+				<li>No Scrubs by TLC</li>
+				<li>Say My Name by Destiny's Child</li>
+			</ul>
+			<button id="q3button">Next</button>
+		</div>
+		<div id="question4" class="question">
+			<h1>"I can't even buy you flowers, But together we can be the perfect soul mates"</h1>
+			<ul>
+				<li>As Long as You Love Me by Backstreet Boys</li>
+				<li>The Way I Are by Timbaland</li>
+				<li>It's Gonna Be Me by N Sync</li>
+			</ul>
+			<button id="q4button">Next</button>
+			</div>
+			<div id="question5" class="question">
+				<h1>"And these two eyes that for no other, The day you leave will cry a river"</h1>
+			<ul>
+				<li>Big Girls Don't Cry by Fergie</li>
+				<li>Cry Me a River by Justin Timberlake</li>
+				<li>Whenever, Wherever by Shakira</li>
+			</ul>
+			</div>
 			<div class="answerPopUp" id="correct">	
 				<h1>Correct!</h1>
 				<h2>You got it right!</h2>
@@ -45,111 +88,6 @@ The day you leave will cry a river"</h1>
 				<h1>That's all folks!</h1>
 				<h2 id="goodbye"></h2>
 				<input onclick="reloadPage()" value="Try Again!" class="button" id="retake">
-			</div>
-	</div>
-		<div id="progress">
-			<div class="progressLight unAnswered" id="progressLamp1">
-				<img  src="./images/q1.png">
-			</div>
-			<div class="progressLight unAnswered" id="progressLamp2">
-				<img  src="./images/q2.png">
-			</div>
-			<div class="progressLight unAnswered" id="progressLamp3">
-				<img  src="./images/q3.png">
-			</div>
-			<div class="progressLight unAnswered" id="progressLamp4">
-				<img  src="./images/q4.png">
-			</div>
-			<div class="progressLight unAnswered" id="progressLamp5">
-				<img  src="./images/q5.png">
-			</div>
-			<div id="progressMeter">
-				<p id="progressUpdate">0%<br>Complete</p>
-			</div>
-		</div>
-		<div class="answers" id="q1">
-			<div class="answer" name="BoomBoomPow">
-			<a href="#">
-				<h3>Boom Boom Pow by the Black Eyed Peas</h3>
-			</a>
-			</div>
-			<div class="answer" name="SuperBass">
-				<a href="#">
-					<h3>Super Bass by Nicki Minaj</h3>
-				</a>
-			</div>
-			<div class="answer" name="PaperPlanes">
-				<a href="#">
-					<h3>Paper Planes by M.I.A.</h3>
-				</a>
-			</div>
-		</div>
-		<div class="answers" id="q2">
-			<div class="answer" name="AllFalls">
-				<a href="#">
-				<h3>All Falls Down by Kanye West</h3>
-				</a>
-			</div>
-			<div class="answer" name="SoFresh">
-				<a href="#">
-					<h3>So Fresh, So Clean by Outkast</h3>
-				</a>
-			</div>
-			<div class="answer" name="DirtOff">
-				<a href="#">
-					<h3>Dirt Off Your Shoulders by Jay-Z</h3>
-				</a>
-			</div>
-		</div>
-		<div class="answers" id="q3">
-			<div class="answer" name="Irreplaceable">
-				<a href="#">
-				<h3>Irreplaceable by Beyonce</h3>
-				</a>
-			</div>
-			<div class="answer" name="NoScrubs">
-				<a href="#">
-					<h3>No Scrubs by TLC</h3>
-				</a>
-			</div>
-			<div class="answer" name="SayMyName">
-				<a href="#">
-					<h3>Say My Name by Destiny's Child</h3>
-				</a>
-			</div>
-		</div>
-		<div class="answers" id="q4">
-			<div class="answer" name="AsLong">
-				<a href="#">
-				<h3>As Long as You Love Me by Backstreet Boys</h3>
-				</a>
-			</div>
-			<div class="answer" name="TheWay">
-				<a href="#">
-					<h3>The Way I Are by Timbaland</h3>
-				</a>
-			</div>
-			<div class="answer" name="It'sGonna">
-				<a href="#">
-					<h3>It's Gonna Be Me by N Sync</h3>
-				</a>
-			</div>
-		</div>
-		<div class="answers" id="q5">
-			<div class="answer" name="BigGirls">
-				<a href="#">
-				<h3>Big Girls Don't Cry by Fergie</h3>
-				</a>
-			</div>
-			<div class="answer" name="CryRiver">
-				<a href="#">
-					<h3>Cry Me a River by Justin Timberlake</h3>
-				</a>
-			</div>
-			<div class="answer" name="Whenever">
-				<a href="#">
-					<h3>Whenever, Wherever by Shakira</h3>
-				</a>
 			</div>
 		</div>
 		<div id="submitButton">

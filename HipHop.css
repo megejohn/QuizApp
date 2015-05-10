@@ -60,11 +60,17 @@ h3 {
 	font-size: 18px;
 	text-transform: uppercase;
 }
-#boomBox {
+#boomBox img {
+	margin-top: 200px;
+	width: 200px;
+	height: 200px;
+	position: relative;
+
 }
 
 #getStarted {
 }
+
 #intro{
 	/*text-transform: none;
 	color: #028F76;*/
@@ -98,8 +104,11 @@ h3 {
 	border: none;
 	width: 150px;
 }
-#topQuestion {
-  display: none;
+.question{
+	color:white;
+	font-size: 18px;
+	margin-top: 200px;
+	display:none;
 }
 .answerPopUp {
   display: none;
